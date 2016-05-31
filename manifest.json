@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "auth-header-chrome-extension",
+  "description": "Set a specific authentication header.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "persistent": true,
+    "scripts": ["bg.js"]
+  },
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "http://127.0.0.1:1337/",
+    "http://localhost:1337/"
+  ]
+}
