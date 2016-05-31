@@ -20,6 +20,8 @@
     "webRequestBlocking",
     "storage",
     "http://127.0.0.1:1337/",
-    "http://localhost:1337/"
+    "http://localhost:1337/",
+    "http://127.0.0.1:8002/",
+    "http://localhost:8002/"
   ]
 }
