@@ -1,8 +1,13 @@
+var KEYS = ["x-dex-name", "x-dex-email", "x-dex-email-verified"];
+
+
 chrome.webRequest.onBeforeSendHeaders.addListener(
   function(details) {
-    var username = localStorage["username"] || "test-user";
-    console.log("chrome.storage.local.get", username);
-    details.requestHeaders.push({name: "GAP-Auth", value: username});
+
+    KEYS.forEach(function(x) {
+      var lx = localStorage[x] || "";
+      details.requestHeaders.push({name: x, value: lx});
+    });
     return {requestHeaders: details.requestHeaders};
   },
   {urls: ["<all_urls>"]},
